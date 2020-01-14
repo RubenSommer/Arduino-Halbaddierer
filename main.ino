@@ -1,26 +1,47 @@
+const int output0 = 2;
+const int output1 = 3;
+
+const int input0 = 4;
+const int input1 = 5;
+
 void setup() {
-
-    /*set pinmode of GPIO pins */
-    pinMode(2, OUTPUT);
-    pinMode(3, OUTPUT);
-    pinMode(4, INPUT);
-    pinMode(5, INPUT);
-
-    /*set baud rate*/
-    Serial.begin(9600);
-
-    /*set integers*/
-    byte input1;
-    byte input2;
-    byte output1;
-    byte output2;
+  // initialize serial:
+  Serial.begin(9600);
 }
 
-void loop () {
-    Serial.println("Please enter your numbers");    /*Client can interact*/
+void loop() {
+  // if there's any serial available, read it:
+  while (Serial.available() > 0) {
+    // look for the next valid integer in the incoming serial stream:
+    byte a = Serial.parseInt();
+    // do it again:
+    byte b = Serial.parseInt();
+    // do it again:
+      if (Serial.read() == '\n') {
+        if (a == 0){
+          digitalWrite(output0, LOW);
+        }
+        
+        if (a == 1) {
+          digitalWrite(output0, HIGH);
+        }
 
-    byte input1 = Serial.read();
-    byte input2 = Serial.read();
-    
-}
+        if (b == 0) {
+          digitalWrite(output1, LOW);
+        }
 
+        if (b == 1){
+          digitalWrite(output1,HIGH);
+        }
+
+      int s = digitalRead(input0);
+      int ü = digitalRead(input1);
+
+      if (Serial.read() == '\n') {
+        Serial.println('s');
+        Serial.println('ü');
+      }
+      
+      }
+    }
+  }

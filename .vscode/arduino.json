@@ -2,6 +2,6 @@
     "board": "arduino:avr:nano",
     "configuration": "cpu=atmega328old",
     "programmer": "AVRISP mkII",
-    "port": "/dev/ttyUSB3",
+    "port": "/dev/ttyUSB4",
     "sketch": "main.ino"
 }
