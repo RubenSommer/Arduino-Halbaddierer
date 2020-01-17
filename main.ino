@@ -40,12 +40,12 @@ void loop() {
 
       //wait for input via GPIO-pin
       int s = digitalRead(input0);
-      int ü = digitalRead(input1);
+      int ue = digitalRead(input1);
 
       //print result
       if (Serial.read() == '\n') {
         Serial.println('s');
-        Serial.println('ü');
+        Serial.println('ue');
       }
       
       }
